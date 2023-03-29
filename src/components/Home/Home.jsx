@@ -1,22 +1,26 @@
-import React from 'react';
+import { useEffect, useState } from "react";
+import Movie from "../Movie/Movie";
 
-const Home = () => {
+
+const Home = ({handleWatchTime}) => {
+
+
+    const [Movies, setMovies] = useState([]);
+
+    useEffect(() => {
+        fetch('data.json')
+        .then(res=>res.json())
+        .then(data =>setMovies(data))
+    }, [])
+
+
+
+
     return (
-        <div >
-            <div className="movie-container ">
-                <div className="movie-card space-y-5">
-                    <div className="movie-poster">
-                        <img src="" alt="" />
-                    </div>
-                    <h3>Demon Slayer</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                    <div className="timeAndRating flex text-center justify-center gap-40">
-                        <p>Watch Time : </p>
-                        <p>Rating : </p>
-                    </div>
-                    <button className='btn btn-secondary w-80'>Book Now</button>
-                </div>
-            </div>
+        <div className="flex flex-col gap-10">
+            {
+                Movies.map(movie =><Movie movie={movie} handleWatchTime={handleWatchTime}></Movie>)
+            }
         </div>
     );
 };

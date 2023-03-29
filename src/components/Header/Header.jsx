@@ -3,7 +3,7 @@ import React from 'react';
 const Header = () => {
     return (
         <div>   
-            <div className="navbar bg-neutral rounded-2xl">
+            <div className="navbar bg-neutral rounded-2xl ">
                 <div className="flex-1">
                     <a className="btn btn-ghost normal-case text-xl">Zetflix</a>
                 </div>
@@ -13,7 +13,7 @@ const Header = () => {
                     </div>
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
+                            <div className="w-10 rounded-full ">
                                 <img src="../../../public/vite.svg" /> 
                             </div>
                         </label>
