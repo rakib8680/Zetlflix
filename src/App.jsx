@@ -5,12 +5,25 @@ import Footer from './components/Footer/Footer'
 import Home from './components/Home/Home'
 import SideCart from './components/SideCart/SideCart'
 
+
+
 function App() {
 
 
-  const handleWatchTime = (watchTime) => {
-    console.log(watchTime)
+  // local storage 
+  const handleWatchTime = (time) => {
+    const previousWatchTime = JSON.parse(localStorage.getItem('watchTime'));
+    if (previousWatchTime) {
+      const sum = previousWatchTime + time
+      localStorage.setItem('watchTime', sum)
+      console.log(previousWatchTime)
+    }
+    else {
+      localStorage.setItem('watchTime', time)
+    }
   }
+
+
 
   return (
 
