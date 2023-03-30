@@ -7,7 +7,7 @@ const Movie = ({ movie, handleWatchTime }) => {
         <>
             <div className="movie-container">
                 <div className="card md:card-side bg-neutral shadow-xl p-0">
-                    <figure><img className='w-full  h-96' src={poster} alt="Movie" /></figure>
+                    <figure><img className='w-auto h-auto md:h-96' src={poster} alt="Movie" /></figure>
                     <div className="card-body">
                         <h2 className="card-title text-primary">{movieName}</h2>
                         <h2 className=" text-primary">{category}</h2>
