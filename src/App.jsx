@@ -4,11 +4,14 @@ import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import Home from './components/Home/Home'
 import SideCart from './components/SideCart/SideCart'
+import { useState } from 'react'
 
 
 
 function App() {
 
+
+  const [watchTime, setWatchTime] = useState("")
 
   // local storage 
   const handleWatchTime = (time) => {
@@ -16,10 +19,11 @@ function App() {
     if (previousWatchTime) {
       const sum = previousWatchTime + time
       localStorage.setItem('watchTime', sum)
-      console.log(previousWatchTime)
+      setWatchTime(sum)
     }
     else {
       localStorage.setItem('watchTime', time)
+      setWatchTime(time)
     }
   }
 
@@ -36,8 +40,8 @@ function App() {
           <Home handleWatchTime={handleWatchTime}></Home>
         </div>
 
-        <div className='col-span-4 card border mt-10 md:mt-0'>
-          <SideCart></SideCart>
+        <div className='col-span-4 card border border-info mt-10 md:mt-0'>
+          <SideCart watchTime = {watchTime}></SideCart>
         </div>
 
       </div>
