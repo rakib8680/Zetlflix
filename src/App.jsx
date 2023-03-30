@@ -5,6 +5,10 @@ import Footer from './components/Footer/Footer'
 import Home from './components/Home/Home'
 import SideCart from './components/SideCart/SideCart'
 import { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+  
+
 
 
 
@@ -40,13 +44,14 @@ function App() {
           <Home handleWatchTime={handleWatchTime}></Home>
         </div>
 
-        <div className='col-span-4 card border border-info mt-10 md:mt-0'>
-          <SideCart watchTime = {watchTime}></SideCart>
+        <div className='col-span-4 card border border-info mt-10 md:mt-0 h-96 md:sticky top-0'>
+          <SideCart watchTime={watchTime}></SideCart>
         </div>
 
       </div>
 
       <Footer></Footer>
+      <ToastContainer></ToastContainer>
     </div>
   )
 }
